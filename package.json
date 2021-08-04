@@ -1,0 +1,32 @@
+{
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "serve": "vite preview"
+  },
+  "dependencies": {
+    "@vue/composition-api": "^1.0.5",
+    "ant-design-vue": "^2.2.2",
+    "eslint-define-config": "^1.0.9",
+    "less": "^4.1.1",
+    "less-loader": "^10.0.1",
+    "vue": "^3.0.5",
+    "vue-router": "4"
+  },
+  "devDependencies": {
+    "@types/node": "^16.4.6",
+    "@typescript-eslint/eslint-plugin": "^4.28.5",
+    "@typescript-eslint/parser": "^4.28.5",
+    "@vitejs/plugin-vue": "^1.2.5",
+    "@vue/compiler-sfc": "^3.0.5",
+    "@vue/eslint-config-typescript": "^7.0.0",
+    "eslint": "^7.31.0",
+    "eslint-plugin-vue": "^7.14.0",
+    "typescript": "^4.3.2",
+    "vite": "^2.4.2",
+    "vite-plugin-svg-icons": "^1.0.3",
+    "vite-plugin-theme": "^0.8.1",
+    "vue-tsc": "^0.0.24"
+  }
+}
