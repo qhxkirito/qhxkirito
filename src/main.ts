@@ -2,6 +2,7 @@
 
 // 基础样式
 import '@/design/index.less';
+import '@/design/tailwind.css';
 // 雪碧图
 import 'virtual:svg-icons-register';
 import { createApp } from 'vue'

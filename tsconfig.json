@@ -18,15 +18,15 @@
       "#/*": ["types/*"],
     },
 
-  },
+  }, 
   "include": [
-    "src/**/*.ts", 
-    "src/**/*.d.ts", 
-    "src/**/*.tsx", 
+    "src/**/*.ts",
+    "src/**/*.d.ts",
+    "src/**/*.tsx",
     "src/**/*.vue",
     "types/**/*.d.ts",
-    "types/**/*.ts", 
-    "shims-vue.d.ts",
+    "types/**/*.ts",
+    "vite.config.ts"
   ],
   "exclude": ["node_modules/*"]
 }

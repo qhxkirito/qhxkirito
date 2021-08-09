@@ -9,7 +9,7 @@ module.exports = {
   bracketSpacing: true, // 对象文字中打印括号之间的空格
   endOfLine: 'auto', // 对象文字中打印括号之间的空格
   arrowParens: 'avoid', // 在单个箭头函数参数周围加上括号<avoid|always>
-  jsxBracketSameLine: true,
+  jsxBracketSameLine: true, // jsx > 是否另起一行
   htmlWhitespaceSensitivity: 'css', // 指定HTML文件的全局空格敏感度 <css|strict|ignore>
   // 使用 2 个空格缩进
   tabSize: 2,

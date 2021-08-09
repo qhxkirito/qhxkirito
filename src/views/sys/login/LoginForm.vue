@@ -14,9 +14,9 @@
     </FormItem>
     <FormItem>
       <InputPassword
-        v-model:value="formState.password"
         size="large"
-        type="password"
+        visibilityToggle
+        v-model:value="formState.password"
         placeholder="Password"
       >
         <template #prefix>
@@ -26,8 +26,8 @@
     </FormItem>
     <FormItem>
       <Button
-        type="primary" 
-        size="large" 
+        type="primary"
+        size="large"
         block
         html-type="submit"
         :loading="formLoginLoading"
@@ -64,13 +64,13 @@ export default defineComponent({
       password: '',
     })
 
-    const formLoginLoading = ref(false);;
+    const formLoginLoading = ref(false)
 
     const handleFinish = (values: FormState) => {
-      formLoginLoading.value = true;
+      formLoginLoading.value = true
       setTimeout(() => {
-        formLoginLoading.value =false
-      }, 3000);
+        formLoginLoading.value = false
+      }, 3000)
       console.log(values, formState.user)
     }
     const handleFinishFailed = (errors: ValidateErrorEntity<FormState>) => {
