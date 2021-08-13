@@ -1,23 +1,21 @@
-<template>
-  <SiderTrigger v-if="sider" />
-  <HeaderTrigger v-else />
-</template>
-<script lang="ts">
-  import { defineComponent } from 'vue';
-  import HeaderTrigger from './HeaderTrigger.vue';
-  import SiderTrigger from './SiderTrigger.vue';
+<script lang="ts" setup>
+import { useMenuSetting } from '@/hooks/settings/useMenuSetting'
+import { MenuUnfoldOutlined, MenuFoldOutlined } from '@ant-design/icons-vue'
 
-  export default defineComponent({
-    name: 'LayoutTrigger',
-    components: {
-      SiderTrigger,
-      HeaderTrigger: HeaderTrigger,
-    },
-    props: {
-      sider:{
-        type: [Boolean],
-        default: () => 1,
-      },
-    },
-  });
+const { toggleCollapsed } = useMenuSetting()
 </script>
+<template>
+  <span @click="toggleCollapsed">
+    <MenuUnfoldOutlined v-if="true" />
+    <MenuFoldOutlined v-else />
+  </span>
+</template>
+
+<style lang="less" scoped>
+::v-deep(svg) {
+  width: 0.16rem;
+  height: 0.16rem;
+  fill: black;
+  cursor: pointer;
+}
+</style>

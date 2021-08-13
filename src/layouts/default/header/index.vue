@@ -1,22 +1,12 @@
+<script lang="ts" setup>
+import { Layout } from 'ant-design-vue'
+import HeaderTrigger from '@/layouts/default/trigger/index.vue'
+const LayoutHead = Layout.Header;
+</script>
 <template>
-  <LayoutHead class="p-0 bg-white!">
-    <div class="layout-head-left">
-      <LayoutTrigger
-        :sider="false"
-      />
+  <LayoutHead class="p-0 bg-white! h-2">
+    <div class="flex h-2">
+      <HeaderTrigger class="px-0.5 transition hover:bg-gray-200 cursor-pointer flex items-center" />
     </div>
   </LayoutHead>
 </template>
-
-<script lang="ts">
-import { Layout } from 'ant-design-vue'
-import LayoutTrigger from '@/layouts/default/trigger/index.vue'
-import { defineComponent } from 'vue'
-export default defineComponent({
-  name: 'DefaultLayout',
-  components: {
-    LayoutHead: Layout.Header,
-    LayoutTrigger,
-  },
-})
-</script>

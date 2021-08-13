@@ -970,5 +970,4 @@ module.exports = {
   plugins: [
     require('@neojp/tailwindcss-important-variant')
   ],
-  important: true,
 }

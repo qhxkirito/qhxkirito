@@ -4,14 +4,31 @@
     "module": "esnext",
     "moduleResolution": "node",
     "strict": true,
+    // 指定是否使用函数参数双向协变检查
+    "strictFunctionTypes": false,
+    // 指定允许从没有默认导出的模块中默认导入
+    "allowSyntheticDefaultImports": true,
     "jsx": "preserve",
-    "sourceMap": true,
-    "resolveJsonModule": true,
-    "esModuleInterop": true,
-    "lib": ["esnext", "dom"],
-    // 设置解析非相对模块名称的基本目录
     "baseUrl": ".",
+    "allowJs": true,
+    "sourceMap": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    // 检查是否有定义了但是没有使用变量
+    "noUnusedLocals": true,
+    // 用于检测是否在函数中没有使用的参数
+    "noUnusedParameters": true,
+    // 用于指定是否启用实验性的装饰器特性
+    "experimentalDecorators": true,
+    "lib": ["esnext", "dom"],
+    // 指定需要包含的模块，只有在这里列出的模块的声明文件才会被加载
+    "types": ["vite/client"],
+    // 设置解析非相对模块名称的基本目录
     "typeRoots": ["./node_modules/@types/", "./types"],
+    // 没有设置明确类型，编译器会默认认为这个值为any类型
+    "noImplicitAny": false,
+    // .d.ts可以跳过声明文件（带有扩展名的文件）的类型检查
+    "skipLibCheck": true,
     // 设置模块名到基于baseUrl的路径映射，可以设置路径别名的语法提示
     "paths": {
       "@/*": ["src/*"],
@@ -19,14 +36,20 @@
     },
 
   }, 
+  // 指定一个匹配列表（属于自动指定该路径下的所有ts相关文件）
   "include": [
+    "tests/**/*.ts",
     "src/**/*.ts",
     "src/**/*.d.ts",
     "src/**/*.tsx",
     "src/**/*.vue",
     "types/**/*.d.ts",
     "types/**/*.ts",
+    "build/**/*.ts",
+    "build/**/*.d.ts",
+    "mock/**/*.ts",
     "vite.config.ts"
   ],
-  "exclude": ["node_modules/*"]
+  // 指定一个排除列表（include的反向操作）
+  "exclude": ["node_modules", "dist", "**/*.js"]
 }

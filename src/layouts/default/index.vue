@@ -1,3 +1,21 @@
+<script lang="ts" setup>
+import { Layout, Menu, MenuItem } from 'ant-design-vue'
+import LayoutFooter from '@/layouts/default/footer/index.vue'
+import {
+  UserOutlined,
+  VideoCameraOutlined,
+  UploadOutlined,
+  MenuUnfoldOutlined,
+  MenuFoldOutlined,
+} from '@ant-design/icons-vue'
+import LayoutContent from '@/layouts/default/content/index.vue'
+import LayoutHead from '@/layouts/default/header/index.vue'
+import { ref } from 'vue'
+import LayoutLogo from '../LayoutLogo.vue'
+const LayoutSider = Layout.Sider
+const selectedKeys = ref<string[]>(['1']);
+const collapsed = ref<boolean>(false);
+</script>
 <template>
   <Layout>
     <LayoutSider v-model:collapsed="collapsed" :trigger="null" collapsible>
@@ -34,48 +52,9 @@
     </Layout>
   </Layout>
 </template>
-<script lang="ts">
-import { Layout, Menu, MenuItem } from 'ant-design-vue'
-import LayoutFooter from '@/layouts/default/footer/index.vue'
-import {
-  UserOutlined,
-  VideoCameraOutlined,
-  UploadOutlined,
-  MenuUnfoldOutlined,
-  MenuFoldOutlined,
-} from '@ant-design/icons-vue'
-import LayoutContent from '@/layouts/default/content/index.vue';
-import LayoutHead from '@/layouts/default/header/index.vue';
-import { defineComponent, ref } from 'vue'
-import LayoutLogo from '../LayoutLogo.vue'
-export default defineComponent({
-  name: 'LayoutHome',
-  components: {
-    Layout,
-    LayoutHead,
-    LayoutSider: Layout.Sider,
-    LayoutContent,
-    Menu,
-    MenuItem: MenuItem,
-    LayoutFooter,
-    UserOutlined,
-    VideoCameraOutlined,
-    UploadOutlined,
-    MenuUnfoldOutlined,
-    MenuFoldOutlined,
-    LayoutLogo,
-  },
-  setup() {
-    return {
-      selectedKeys: ref<string[]>(['1']),
-      collapsed: ref<boolean>(false),
-    }
-  },
-})
-</script>
 <style lang="less" scoped>
 .ant-layout {
-  height: 100vh;
+  height: 100%;
 }
 
 .trigger {

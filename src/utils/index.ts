@@ -1,3 +1,5 @@
+// import { isObject } from '@/utils/is';
+
 export function openWindow(
   url: string,
   opt?: { target?: TargetContext | string; noopener?: boolean; noreferrer?: boolean }

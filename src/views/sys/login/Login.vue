@@ -1,28 +1,24 @@
+<script lang="ts" setup>
+import SvgIcon from '@/components/common/SvgIcon.vue'
+import LoginForm from './LoginForm.vue'
+import MobileForm from './MobileForm.vue'
+
+</script>
 <template>
-  <div class="kirito-login min-w-320 px-4 min-h-full overflow-hidden relative">
-    <div class="w-full py-8 px-4 flex justify-between">
-      <div class="overflow-hidden pt-2 z-20">
+  <div class="relative h-screen px-4 overflow-hidden kirito-login min-w-320">
+    <div class="flex justify-between w-full px-4 py-8">
+      <div class="z-20 pt-2 overflow-hidden">
         <SvgIcon name="login-box-bg" />
-        <div class="font-bold text-white text-base mt-1">kirito的后台管理系统</div>
+        <div class="mt-1 text-base font-bold text-white">kirito的后台管理系统</div>
       </div>
-      <div class="loginForm w-3/6 pr-1 pl-3 pt-2">
-        <h2 class="text-base font-bold">登录</h2>
+      <div class="w-3/6 pl-3 pr-1 loginForm">
         <LoginForm />
+        <!-- <MobileForm /> -->
       </div>
     </div>
   </div>
 </template>
-<script lang="ts">
-import SvgIcon from '@/components/common/SvgIcon.vue'
-import LoginForm from './LoginForm.vue'
-export default {
-  name: 'Login',
-  components: {
-    SvgIcon,
-    LoginForm,
-  },
-}
-</script>
+
 <style lang="less" scoped>
 .kirito-login {
   &::before {
@@ -37,12 +33,6 @@ export default {
     background-repeat: no-repeat;
     background-size: auto 100%;
     content: '';
-  }
-
-  .loginForm {
-    ::v-deep(.ant-btn > span) {
-      font-size: 0.16rem;
-    }
   }
 }
 </style>
